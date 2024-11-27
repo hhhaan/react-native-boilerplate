@@ -1,3 +1,30 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+    "extends": "@tsconfig/react-native/tsconfig.json",
+    "compilerOptions": {
+        "target": "ESNext", // 최신 ECMAScript 기능 지원
+        "module": "ESNext", // ES 모듈 방식
+        "lib": ["ESNext"], // 최신 라이브러리 사용
+        "baseUrl": "./src", // 경로 기준 설정
+        "paths": {
+            // 경로 별칭 설정
+            "@/*": ["*"],
+            "@app/*": ["app/*"],
+            "@features/*": ["features/*"],
+            "@widgets/*": ["widgets/*"],
+            "@screens/*": ["screens/*"],
+            "@entities/*": ["entities/*"],
+            "@shared/*": ["shared/*"]
+        },
+        "strict": true, // 엄격한 타입 검사 활성화
+        "resolveJsonModule": true, // JSON 파일 import 지원
+        "esModuleInterop": true, // CommonJS 호환
+        "skipLibCheck": true, // 라이브러리 타입 체크 생략
+        "isolatedModules": true // 모듈 단위 검사
+    },
+    "exclude": [
+        "node_modules",
+        "babel.config.js",
+        "metro.config.js",
+        "jest.config.js"
+    ]
 }
