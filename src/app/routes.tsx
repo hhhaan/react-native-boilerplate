@@ -11,7 +11,10 @@ const Stack = createStackNavigator<RootStackParamList>();
 export const Routes = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator
+                initialRouteName="Home"
+                screenOptions={{ headerShown: false }}
+            >
                 <Stack.Screen name="Home" component={HomeScreen} />
             </Stack.Navigator>
         </NavigationContainer>
